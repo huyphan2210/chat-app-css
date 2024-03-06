@@ -17,10 +17,12 @@ import Phone from "./components/Phone/Phone.vue";
 main {
   position: relative;
   flex-grow: 1;
-  padding: 10vh 15vw;
+  padding: 10vh clamp(10vw, 2rem, 15vw);
 
   .content {
-    width: 70vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }
 </style>
