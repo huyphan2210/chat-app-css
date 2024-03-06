@@ -1,5 +1,6 @@
 <script lang="ts">
 import avatar from "../../assets/images/avatar.jpg";
+import Comment from "./Comment/Comment.vue";
 
 export default {
   name: "phone-illustration",
@@ -7,6 +8,9 @@ export default {
     return {
       avatar,
     };
+  },
+  components: {
+    Comment,
   },
 };
 </script>
@@ -42,6 +46,13 @@ export default {
         </button>
       </header>
       <main class="phone__chat-app__body">
+        <div class="phone__chat-app__body__content">
+          <Comment content="That sounds great. I’d be happy with that." />
+          <Comment content="Could you send over some pictures of your dog, please?" />
+          <Comment content="Here are a few pictures. She’s a happy girl!" isRight />
+          <Comment content="Can you make it?" isRight />
+          <Comment content="She looks so happy! The time we discussed works. How long shall I take her out for?" />
+        </div>
         <form submit class="phone__chat-app__body__input">
           <input disabled placeholder="Type your message..." />
           <button type="submit" title="Submit button">
@@ -64,11 +75,14 @@ export default {
   border-radius: 2rem;
   box-shadow: 0 0 1rem -10px rgba(0, 0, 0, 0.85);
   padding: 1rem;
-  height: 60vh;
+  min-height: 60vh;
   max-width: 20rem;
+  display: flex;
+  flex-direction: column;
 
   &__chat-app {
     background-color: var(--background);
+    flex-grow: 1;
     height: 100%;
     border-radius: 1rem;
     position: relative;
@@ -144,7 +158,12 @@ export default {
       flex-grow: 1;
       position: relative;
       display: flex;
-      flex-direction: column-reverse;
+      flex-direction: column;
+
+      &__content {
+        flex-grow: 1;
+      }
+
       &__input {
         position: relative;
         input {
