@@ -1,12 +1,16 @@
 <script lang="ts">
 import avatar from "../../assets/images/avatar.jpg";
 import Comment from "./Comment/Comment.vue";
+import dogImage1 from "../../assets/images/dog-image-1.jpg";
+import dogImage2 from "../../assets/images/dog-image-2.jpg";
+import dogImage3 from "../../assets/images/dog-image-3.jpg";
 
 export default {
   name: "phone-illustration",
   data() {
     return {
       avatar,
+      dogImgs: [dogImage1, dogImage2, dogImage3],
     };
   },
   components: {
@@ -47,11 +51,12 @@ export default {
       </header>
       <main class="phone__chat-app__body">
         <div class="phone__chat-app__body__content">
-          <Comment content="That sounds great. I’d be happy with that." />
-          <Comment content="Could you send over some pictures of your dog, please?" />
-          <Comment content="Here are a few pictures. She’s a happy girl!" isRight />
-          <Comment content="Can you make it?" isRight />
-          <Comment content="She looks so happy! The time we discussed works. How long shall I take her out for?" />
+          <comment content="That sounds great. I’d be happy with that." />
+          <comment content="Could you send over some pictures of your dog, please?" />
+          <comment :imgs="dogImgs" is-right/>
+          <comment content="Here are a few pictures. She’s a happy girl!" is-right />
+          <comment content="Can you make it?" is-right />
+          <comment content="She looks so happy! The time we discussed works. How long shall I take her out for?" />
         </div>
         <form submit class="phone__chat-app__body__input">
           <input disabled placeholder="Type your message..." />
@@ -75,7 +80,6 @@ export default {
   border-radius: 2rem;
   box-shadow: 0 0 1rem -10px rgba(0, 0, 0, 0.85);
   padding: 1rem;
-  min-height: 60vh;
   max-width: 20rem;
   display: flex;
   flex-direction: column;
@@ -157,8 +161,6 @@ export default {
       padding: 1rem;
       flex-grow: 1;
       position: relative;
-      display: flex;
-      flex-direction: column;
 
       &__content {
         flex-grow: 1;
