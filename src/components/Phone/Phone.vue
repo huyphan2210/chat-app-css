@@ -52,11 +52,20 @@ export default {
       <main class="phone__chat-app__body">
         <div class="phone__chat-app__body__content">
           <comment content="That sounds great. I’d be happy with that." />
-          <comment content="Could you send over some pictures of your dog, please?" />
-          <comment :imgs="dogImgs" is-right/>
-          <comment content="Here are a few pictures. She’s a happy girl!" is-right />
+          <comment
+            content="Could you send over some pictures of your dog, please?"
+          />
+          <comment :imgs="dogImgs" is-right />
+          <comment
+            content="Here are a few pictures. She’s a happy girl!"
+            is-right
+          />
           <comment content="Can you make it?" is-right />
-          <comment content="She looks so happy! The time we discussed works. How long shall I take her out for?" />
+          <comment
+            content="She looks so happy! The time we discussed works. How long shall I take her out for?"
+          />
+          <comment is-radio radio-content="30 minutes walk" :radio-price="29" />
+          <comment is-radio radio-content="1 hour walk" :radio-price="49" />
         </div>
         <form submit class="phone__chat-app__body__input">
           <input disabled placeholder="Type your message..." />
@@ -80,9 +89,10 @@ export default {
   border-radius: 2rem;
   box-shadow: 0 0 1rem -10px rgba(0, 0, 0, 0.85);
   padding: 1rem;
-  max-width: 20rem;
+  max-width: 25rem;
   display: flex;
   flex-direction: column;
+  flex: 0 0 100%;
 
   &__chat-app {
     background-color: var(--background);

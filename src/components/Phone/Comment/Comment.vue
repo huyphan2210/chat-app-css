@@ -5,6 +5,9 @@ export default {
     content: String,
     isRight: Boolean,
     imgs: Array<string>,
+    isRadio: Boolean,
+    radioContent: String,
+    radioPrice: Number,
   },
 };
 </script>
@@ -22,6 +25,13 @@ export default {
       :alt="'Dog' + i"
     />
   </div>
+  <div v-if="isRadio" class="chat-radio">
+    <div class="chat-radio__left">
+      <div class="chat-radio__left__button"></div>
+      <span>{{ radioContent }}</span>
+    </div>
+    <span class="chat-radio__right"> ${{ radioPrice }} </span>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -34,7 +44,7 @@ p {
 
   &.chat-left {
     color: var(--chat-left);
-    background-color: var(--sub-heading);
+    background-color: var(--chat-left-bg);
     border-radius: 2rem 2rem 2rem 0;
   }
 
@@ -59,6 +69,43 @@ p {
   img {
     width: calc((100% - 2rem) / 3);
     border-radius: 1rem;
+  }
+}
+
+.chat-radio {
+  padding: 1rem;
+  background: linear-gradient(
+    to right,
+    var(--gradient-top),
+    var(--gradient-bottom)
+  );
+  border-radius: 2rem 2rem 2rem 0;
+  width: 70%;
+  margin-bottom: 1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &__button {
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border-color: white;
+      border-style: solid;
+      border-width: 0.1rem;
+      background-color: transparent;
+      width: 1.5rem;
+    }
+
+    span {
+      font-size: 0.8rem;
+    }
   }
 }
 </style>

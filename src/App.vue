@@ -42,13 +42,28 @@ main {
       h1 {
         color: var(--main-heading);
         margin-top: 0;
-        font-size: clamp(2rem, 10vw, 4rem);
+        font-size: clamp(2rem, 10vw, 3rem);
       }
 
       p {
         line-height: clamp(1.5rem,8vw, 3rem);
         color: var(--paragraph);
-        font-size: clamp(1rem, 5vw, 2rem);
+        font-size: clamp(1rem, 5vw, 1.2rem);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  main {
+    padding-inline: clamp(15vw, 15rem, 20vw);
+    .content {
+      flex-direction: row;
+      gap: clamp(8vw, 10rem, 10vw);
+      transform: scale(0.9);
+
+      hgroup {
+        text-align: start;
       }
     }
   }

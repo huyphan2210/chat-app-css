@@ -30,4 +30,18 @@ export default {
     left: 0;
   }
 }
+
+@media screen and (min-width: 1440px) {
+  .special-shape {
+    width: 30vw;
+    border-radius: 37.5vh 37.5vh 0 0;
+    left: 75%;
+    height: 75vh;
+
+    &.gradient {
+      border-radius: 0 0 37.5vh 37.5vh;
+      left: -5%;
+    }
+  }
+}
 </style>
