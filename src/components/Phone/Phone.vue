@@ -93,6 +93,7 @@ export default {
   display: flex;
   flex-direction: column;
   flex: 0 0 100%;
+  animation: slideIn 2s;
 
   &__chat-app {
     background-color: var(--background);
@@ -223,6 +224,16 @@ export default {
       height: 1.5rem;
       border-radius: 0 0 1rem 1rem;
     }
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate(0, -100%);
+  }
+  100% {
+    opacity: 1;
   }
 }
 </style>

@@ -38,6 +38,7 @@ main {
     hgroup {
       margin-top: 4rem;
       text-align: center;
+      animation: slideIn 2s;
 
       h1 {
         color: var(--main-heading);
@@ -46,7 +47,7 @@ main {
       }
 
       p {
-        line-height: clamp(1.5rem,8vw, 3rem);
+        line-height: clamp(1.5rem, 8vw, 3rem);
         color: var(--paragraph);
         font-size: clamp(1rem, 5vw, 1.2rem);
       }
@@ -66,6 +67,16 @@ main {
         text-align: start;
       }
     }
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate(100%);
+  }
+  100% {
+    opacity: 1;
   }
 }
 </style>

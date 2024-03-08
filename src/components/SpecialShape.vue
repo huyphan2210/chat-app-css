@@ -18,6 +18,7 @@ export default {
   bottom: 0;
   left: 50%;
   z-index: -1;
+  animation: fadeIn 4s;
 
   &.gradient {
     background: linear-gradient(
@@ -42,6 +43,15 @@ export default {
       border-radius: 0 0 37.5vh 37.5vh;
       left: -5%;
     }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 </style>

@@ -46,6 +46,7 @@ p {
     color: var(--chat-left);
     background-color: var(--chat-left-bg);
     border-radius: 2rem 2rem 2rem 0;
+    animation: slideInFromLeft 2s;
   }
 
   &.chat-right {
@@ -53,6 +54,7 @@ p {
     background-color: white;
     border-radius: 2rem 2rem 0 2rem;
     margin-left: calc(40% - 2rem);
+    animation: slideInFromRight 2s;
   }
 }
 
@@ -61,6 +63,7 @@ p {
   gap: 1rem;
   width: 70%;
   margin-bottom: 1rem;
+  animation: slideInFromRight 2s;
 
   &.right {
     margin-left: 30%;
@@ -87,6 +90,7 @@ p {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  animation: slideInFromLeft 2s;
 
   &__left {
     display: flex;
@@ -106,6 +110,26 @@ p {
     span {
       font-size: 0.8rem;
     }
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-100%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translate(100%);
+  }
+  100% {
+    opacity: 1;
   }
 }
 </style>
